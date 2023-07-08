@@ -58,23 +58,19 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
       roundedHeader.replaceWith(createFooter());
       hiddenSection.remove();
-    }, 6500); // Adjust the delay (in milliseconds) as needed
+    }, 0.5); // Adjust the delay (in milliseconds) as needed
   
-    // Function to create the footer element
-    function createFooter() {
-      var footerDiv = document.createElement("div");
-      footerDiv.className = "rounded-footer";
-  
-      var hiddenSection = document.createElement("section");
-      hiddenSection.className = "hidden-section";
-  
-      var copyrightText = document.createTextNode("");
-      hiddenSection.appendChild(copyrightText);
-  
-      footerDiv.appendChild(hiddenSection);
-  
-      return footerDiv;
-    }
+// Function to create the "footer" element with a straight bar
+function createFooter() {
+  var footerDiv = document.createElement("div");
+  footerDiv.className = "footer-bar";
+  footerDiv.style.width = "800px";
+  footerDiv.style.height = "2px";
+  footerDiv.style.backgroundColor = "#333";
+  footerDiv.style.margin = "0 auto"; // Center the bar horizontally
+
+  return footerDiv;
+}
   });
 
   document.addEventListener("DOMContentLoaded", function() {
