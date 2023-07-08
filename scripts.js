@@ -1,15 +1,4 @@
 
-function toggleContactInfo() {
-    var contactInfo = document.getElementById("contactInfo");
-    if (contactInfo.style.maxHeight === "0px") {
-        contactInfo.style.maxHeight = contactInfo.scrollHeight + "px";
-        contactInfo.style.opacity = 1;
-    } else {
-        contactInfo.style.maxHeight = "0px";
-        contactInfo.style.opacity = 0;
-    }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     var sections = document.getElementsByClassName("hidden-section");
     var delay = 450; // Delay in milliseconds between each reveal
@@ -21,19 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }, delay * (index + 1));
         })(i);
     }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    var menuButton = document.getElementById("menu-button");
-    var menuDropdown = document.getElementById("menu-dropdown");
-
-    menuButton.addEventListener("click", function () {
-        menuDropdown.style.display = menuDropdown.style.display === "none" ? "block" : "none";
-    });
-
-    menuDropdown.addEventListener("mouseleave", function () {
-        menuDropdown.style.display = "none";
-    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -52,33 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function smoothScroll(target) {
-        var destination = document.querySelector(target);
-        var destinationPosition = destination.offsetTop;
-        var startPosition = window.pageYOffset;
-        var distance = destinationPosition - startPosition;
-        var duration = 800;
-        var start = null;
-
-        function scrollAnimation(timestamp) {
-            if (!start) start = timestamp;
-            var progress = timestamp - start;
-            window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
-            if (progress < duration) {
-                window.requestAnimationFrame(scrollAnimation);
-            }
-        }
-
-        function easeInOutCubic(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t * t + b;
-            t -= 2;
-            return c / 2 * (t * t * t + 2) + b;
-        }
-
-        window.requestAnimationFrame(scrollAnimation);
-    }
-
     sections.forEach(function (section) {
         section.addEventListener("click", function () {
             sections.forEach(function (section) {
@@ -92,4 +41,55 @@ document.addEventListener("DOMContentLoaded", function () {
     handleSectionChange();
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var roundedHeader = document.querySelector(".rounded-header");
+    var hiddenSection = document.querySelector(".hidden-section");
+  
+    // Set up the fade animation
+    roundedHeader.style.opacity = 1;
+    roundedHeader.style.transition = "opacity 1s";
+  
+    // Start the fade animation
+    setTimeout(function() {
+      roundedHeader.style.opacity = 0;
+    }, 4000); // Adjust the delay (in milliseconds) as needed
+  
+    // Replace the header with the footer after the animation is complete
+    setTimeout(function() {
+      roundedHeader.replaceWith(createFooter());
+      hiddenSection.remove();
+    }, 5500); // Adjust the delay (in milliseconds) as needed
+  
+    // Function to create the footer element
+    function createFooter() {
+      var footerDiv = document.createElement("div");
+      footerDiv.className = "rounded-footer";
+  
+      var hiddenSection = document.createElement("section");
+      hiddenSection.className = "hidden-section";
+  
+      var copyrightText = document.createTextNode("");
+      hiddenSection.appendChild(copyrightText);
+  
+      footerDiv.appendChild(hiddenSection);
+  
+      return footerDiv;
+    }
+  });
 
+  document.addEventListener("DOMContentLoaded", function() {
+    var roundedHeader = document.querySelector(".rounded-header");
+  
+    // Check if the "displayHeader" key exists in local storage
+    if (localStorage.getItem("displayHeader") === "true") {
+      roundedHeader.style.display = "none"; // Hide the section
+    } else {
+      // Show the section and set the "displayHeader" key to true
+      roundedHeader.style.display = "block";
+      localStorage.setItem("displayHeader", "true");
+    }
+  });
+  
+  
+
+  

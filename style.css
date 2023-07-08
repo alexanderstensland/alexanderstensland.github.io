@@ -47,7 +47,7 @@ img {
     padding: 2px;
     text-align: center;
     border-radius: 10px;
-    font-size: smaller;
+    font-size: 0px;
 }
 
 /* Centering Stuff */
@@ -60,6 +60,7 @@ img {
 .centered-text {
     text-align: center;
     margin-top: auto;
+    text-rendering: optimizeLegibility;
 }
 
 .centered-texttwo {
