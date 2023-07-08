@@ -6,12 +6,13 @@ body {
 }
 
 .rounded-header {
+    max-width: 800px;
+    margin: 0 auto;
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    height: 100vh;
 }
 
 h1 {
@@ -119,12 +120,11 @@ img {
 /* Welcome page */
 #welcome-section {
     height: 100vh;
-    display: flex;
+    display:inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #333;
-    ;
 }
 
 #welcome-text {
