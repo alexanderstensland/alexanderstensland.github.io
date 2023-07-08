@@ -1,0 +1,184 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
+    font-size: medium;
+}
+
+.rounded-header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+img {
+    width: 400px;
+    height: auto;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.linked-image {
+    width: 40px;
+    height: auto;
+    background-color: transparent;
+}
+
+.rounded-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: smaller;
+}
+
+/* Centering Stuff */
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-text {
+    text-align: center;
+    margin-top: auto;
+}
+
+.centered-texttwo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Center align section content */
+    font-size: x-small;
+    font-style: italic;
+
+}
+
+.underline {
+    text-decoration: underline;
+    /* Add underline to the element */
+}
+
+/* lets connect */
+.center-sections-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.center-section {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Center align section content */
+}
+
+.center-section a {
+    text-decoration: none;
+    font-size: x-small;
+    color: #555;
+    /* Dark gray text color */
+    margin: 10px;
+}
+
+.center-section a:hover {
+    color: #000;
+    /* Black text color on hover */
+}
+
+/* hidden sections */
+.hidden-section {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Welcome page */
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    ;
+}
+
+#welcome-text {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    color: rgb(103, 103, 103);
+}
+
+/* page sections */
+.sections-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+
+.section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-content {
+    display:inline-block;
+}
+
+.section a {
+    text-decoration: none;
+    font-size: large;
+    color: #555;
+    /* Dark gray text color */
+    margin: 10px;
+}
+
+.section a:hover {
+    color: #000;
+    /* Black text color on hover */
+}
+
+.active-section .section-content {
+    display: block;
+    /* Show section content when active */
+}
+
+.active-section a {
+    text-decoration: underline;
+}
