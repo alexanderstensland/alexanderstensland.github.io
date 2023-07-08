@@ -85,7 +85,7 @@ function createFooter() {
       localStorage.setItem("displayHeader", "true");
     }
   });
-  
-  
 
+  /* for debugging */
+  //localStorage.clear()
   
