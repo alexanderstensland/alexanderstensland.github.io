@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
       roundedHeader.replaceWith(createFooter());
       hiddenSection.remove();
-    }, 0.5); // Adjust the delay (in milliseconds) as needed
+    }, 6500); // Adjust the delay (in milliseconds) as needed
   
 // Function to create the "footer" element with a straight bar
 function createFooter() {
