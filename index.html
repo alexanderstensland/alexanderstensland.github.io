@@ -80,7 +80,7 @@
 
     .hidden-section {
       opacity: 0;
-      transition: opacity 2s ease-in;
+      transition: opacity 1s ease-in;
     }
   </style>
 
@@ -97,23 +97,30 @@
     }
   </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var sections = document.getElementsByClassName("hidden-section");
-      for (var i = 0; i < sections.length; i++) {
-        sections[i].style.opacity = 1;
-      }
-    });
-  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var sections = document.getElementsByClassName("hidden-section");
+    var delay = 1000; // Delay in milliseconds between each reveal
+
+    for (var i = 0; i < sections.length; i++) {
+      (function(index) {
+        setTimeout(function() {
+          sections[index].style.opacity = 1;
+        }, delay * (index + 1));
+      })(i);
+    }
+  });
+</script>
 
 </head>
 
 <body>
-  <section class="hidden-section">
-    <div class="rounded-header">
+
+  <div class="rounded-header">
+    <section class="hidden-section">
       <h1>Welcome</h1>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <main>
     <section class="hidden-section">
@@ -132,12 +139,12 @@
     </section>
 
     <section class="hidden-section">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
     </section>
 
     <section class="hidden-section">
@@ -152,12 +159,14 @@
 
   </main>
 
-  <section class="hidden-section">
-    <div class="rounded-footer">
-      &copy; 2023 Alexander's Webpage. All rights reserved.
-    </div>
-  </section>
-  
+
+  <div class="rounded-footer">
+    <section class="hidden-section"></section>
+    &copy; 2023 Alexander's Webpage. All rights reserved.
+    </section>
+  </div>
+
+
 </body>
 
 </html>
