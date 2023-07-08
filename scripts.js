@@ -52,13 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Start the fade animation
     setTimeout(function() {
       roundedHeader.style.opacity = 0;
-    }, 4000); // Adjust the delay (in milliseconds) as needed
+    }, 5000); // Adjust the delay (in milliseconds) as needed
   
     // Replace the header with the footer after the animation is complete
     setTimeout(function() {
       roundedHeader.replaceWith(createFooter());
       hiddenSection.remove();
-    }, 5500); // Adjust the delay (in milliseconds) as needed
+    }, 6500); // Adjust the delay (in milliseconds) as needed
   
     // Function to create the footer element
     function createFooter() {
